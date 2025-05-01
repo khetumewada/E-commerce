@@ -86,6 +86,7 @@ padding-right: 0;
 {% endblock %}
 {% block js %}
 <script>
+
 // Find out the cart items from localStorage
 if (localStorage.getItem('cart') == null) {
     var cart = {};
@@ -98,7 +99,7 @@ if (localStorage.getItem('cart') == null) {
 // $('.cart').click(function() {
 $('.divpr').on('click', 'button.cart', function() {
     var idstr = this.id.toString();
-    if (cart[idstr] != undefined) {
+    if (cart[idstr] !== undefined) {
         qty = cart[idstr][0] + 1;
     } else {
         qty = 1;
